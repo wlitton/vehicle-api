@@ -1,0 +1,131 @@
+swagger: '2.0'
+info:
+  version: '1'
+  title: Vehicle API
+  description: docs for vehicle API endpoints
+paths:
+  /vehicle:
+    get:
+      summary: Returns all vehicles
+      produces:
+      - application/json
+      parameters: 
+      - $ref: '#/parameters/PageLimit'
+      - $ref: '#/parameters/PageNumber'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vehicle'
+  /vehicle/make/{make}:
+    get:
+      description: Obtain vehicles by make
+      parameters:
+        - name: make
+          in: path 
+          type: string
+          required: true 
+        - $ref: '#/parameters/PageLimit'
+        - $ref: '#/parameters/PageNumber'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vehicle'
+  /vehicle/model/{model}:
+    get:
+      description: Obtain vehicles by model
+      parameters:
+        - name: model
+          in: path 
+          type: string
+          required: true 
+        - $ref: '#/parameters/PageLimit'
+        - $ref: '#/parameters/PageNumber'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vehicle'
+  /vehicle/year/{year}:
+    get:
+      description: Obtain vehicles by year
+      parameters:
+        - name: year
+          in: path 
+          type: string
+          required: true 
+        - $ref: '#/parameters/PageLimit'
+        - $ref: '#/parameters/PageNumber'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vehicle'
+  /vehicle/color/{color}:
+    get:
+      description: Obtain vehicles by color
+      parameters:
+        - name: color
+          in: path 
+          type: string
+          required: true 
+        - $ref: '#/parameters/PageLimit'
+        - $ref: '#/parameters/PageNumber'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vehicle'
+definitions:
+  Vehicle:
+    description: vehicle object
+    type: object
+    properties:
+      id:
+        type: integer
+      make:
+        type: string
+      model:
+        type: string
+      year:
+        type: string
+      color:
+        type: string
+      price:
+        type: string
+      mileage:
+        type: string
+      createdby:
+        type: string
+      updatedby:
+        type: string
+parameters:
+  PageLimit:
+    name: count
+    in: query
+    type: integer
+    description: Limits the number of items on a page
+    required: false
+    default: 5
+  PageNumber:
+    name: offset
+    in: query
+    type: integer
+    description: Specifies the page number 
+    required: false
+    default: 0
+host: localhost:10222
+basePath: /
+schemes:
+- http
