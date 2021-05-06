@@ -23,3 +23,7 @@ docker run -t --link docker-mysql:mysql -p 10222:10222 veh_manager_app
 5. test vehicles endpoint, open browser and navigate to:
 
 http://localhost:10222/vehicle
+
+6. navigate to
+
+http://localhost:10222/thanks 

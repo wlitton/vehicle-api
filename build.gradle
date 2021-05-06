@@ -45,7 +45,7 @@ dependencies {
     compile 'mysql:mysql-connector-java'
     compile 'org.springframework.boot:spring-boot-starter-undertow'
 
-    implementation 'io.springfox:springfox-boot-starter:3.0.0-SNAPSHOT'
+   // implementation 'io.springfox:springfox-boot-starter:3.0.0-SNAPSHOT'
 }
 dependencyManagement {
     imports {
