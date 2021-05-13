@@ -1,6 +1,6 @@
 SET UP 
 
-1. Run docker compose up:
+1. Run docker-compose up:
 
 docker-compose up
 
